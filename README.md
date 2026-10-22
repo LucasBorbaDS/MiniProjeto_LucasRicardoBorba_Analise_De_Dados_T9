@@ -32,8 +32,8 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
 ### Opção 1: Executando localmente no VS Code
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/LucasBorbaDS/Miniprojeto_LucasBorba_Analise_de_Dados_T9.git
-   cd Miniprojeto_LucasBorba_Analise_de_Dados_T9
+   git clone https://github.com/LucasBorbaDS/MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9.git
+   cd MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9
    ```
 2. Crie e sincronize o ambiente virtual:
    ```bash
@@ -47,8 +47,8 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
 ### Opção 2: Instalando dependências via pip
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/LucasBorbaDS/Miniprojeto_LucasBorba_Analise_de_Dados_T9.git
-   cd Miniprojeto_LucasBorba_Analise_de_Dados_T9
+   git clone https://github.com/LucasBorbaDS/MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9.git
+   cd MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9
    ```
 2. Crie e ative um ambiente virtual:
    ```bash
