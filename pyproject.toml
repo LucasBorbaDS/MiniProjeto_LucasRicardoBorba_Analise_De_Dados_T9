@@ -1,7 +1,7 @@
 [project]
 name = "miniprojeto-lucasricardoborba-analise-de-dados-t9"
 version = "0.1.0"
-description = "Add your description here"
+description = "Mini-projeto avaliativo de Análise de Dados com Python (Turma 9) - Análise de Vendas no Varejo"
 readme = "README.md"
 authors = [
     { name = "LucasBorbaDS", email = "borbalucas33@gmail.com" }
