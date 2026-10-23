@@ -19,9 +19,6 @@ dependencies = [
     "watermark>=2.6.0",
 ]
 
-[project.scripts]
-miniprojeto-lucasricardoborba-analise-de-dados-t9 = "miniprojeto_lucasricardoborba_analise_de_dados_t9:main"
+[tool.uv]
+package = false
 
-[build-system]
-requires = ["uv_build>=0.12.23,<0.13.0"]
-build-backend = "uv_build"

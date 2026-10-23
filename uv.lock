@@ -664,7 +664,7 @@ wheels = [
 [[package]]
 name = "miniprojeto-lucasricardoborba-analise-de-dados-t9"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "ipykernel" },
     { name = "matplotlib" },
