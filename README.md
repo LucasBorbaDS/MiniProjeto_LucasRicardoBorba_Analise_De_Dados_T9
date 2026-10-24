@@ -96,7 +96,7 @@ O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
   - Agrupamentos analíticos usando `groupby()` e `pivot_table()`:
     1. Comportamento e volume por Gênero (`CL_GENERO`);
     2. Vendas e participação percentual por Categoria (`PR_CAT`);
-    3. Cruzamento multidimensional de Segmento de Cliente (`CL_SEG`) vs. Estado Civil (`CL_EC`);
+    3. Cruzamento multidimensional de Segmento de Cliente (`CL_SEG`) vs. Estado Civil (`CL_EC`), com aplicação do mapeamento semântico padronizado (`1: Solteiro`, `2: Casado`, `3: Divorciado`, `4: Viúvo`, `5: Outro`) derivado das convenções demográficas e cadastrais brasileiras (como IBGE e formulários de ERP/CRM) para assegurar interpretabilidade analítica na nova coluna `CL_EC_DESC`;
     4. Tendência temporal e histórico de compras anual.
   - Visualizações analíticas com paletas modernas (Matplotlib / Seaborn).
   - Painel consolidado de contadores exibido em formato de relatório de terminal.
@@ -115,6 +115,7 @@ O processo de **ETL (Extract, Transform, Load)** constitui o pilar fundamental d
 2. **Consistência e Unicidade (Uniqueness):** A detecção de 96.553 duplicatas estritas evidenciou redundância no processo de extração da fonte. A manutenção desses registros inflaria artificialmente a contagem de itens vendidos em mais de 11,6%, distorcendo a curva de demanda real.
 3. **Conformidade de Tipos (Conformity):** A conversão de datas armazenadas em texto (`string`) para o formato temporal nativo (`datetime`) é requisito indispensável para permitir ordenação cronológica precisa, agrupamentos sazonais (ano/mês) e filtros de intervalo temporal.
 4. **Validade e Integridade Referencial (Integrity):** A validação do grão da compra (`CO_ID`) garantiu a consistência relacional do negócio, comprovando que cada cesta de compras representa uma única transação de um cliente específico em uma determinada data.
+5. **Interpretabilidade e Semântica Categórica (Interpretability):** A coluna `CL_EC` continha originalmente códigos numéricos brutos (`1` a `5`). Para viabilizar a tomada de decisão executiva na matriz analítica multidimensional, adotou-se a convenção clássica de cadastros demográficos e socioeconômicos brasileiros (IBGE / ERPs varejistas), mapeando `1: Solteiro`, `2: Casado`, `3: Divorciado`, `4: Viúvo` e `5: Outro` na coluna derivada `CL_EC_DESC`.
 
 *Conclusão teórica:* Investir na camada de preparação e governança da qualidade dos dados assegura que as decisões tomadas pela gestão estejam ancoradas em fatos consistentes, evitando o clássico axioma *"Garbage In, Garbage Out"* (GIGO).
 
