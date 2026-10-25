@@ -76,17 +76,17 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
 O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
 
 - **Sprint 1 (Importação e Diagnóstico):**
-  - Extração nativa e estruturada em fluxo de dicionários com `csv.DictReader` (Critério 3 da avaliação).
+  - Extração nativa e estruturada em fluxo de dicionários com `csv.DictReader`.
   - Carga otimizada em DataFrame via `pandas.read_csv`.
   - Diagnóstico inicial de dimensões (830.000 linhas × 14 colunas) e tipagem primitiva.
 - **Sprint 2 (Transformação e Regras de Negócio):**
   - Funções de sanitização textual usando Expressões Regulares (`re`).
-  - Validação estrita da regra de negócio do identificador de compras (`CO_ID`): confirmação de que cada carrinho pertence exclusivamente a 1 cliente e 1 data (Critério 5).
+  - Validação estrita da regra de negócio do identificador de compras (`CO_ID`): confirmação de que cada carrinho pertence exclusivamente a 1 cliente e 1 data.
   - Conversão da coluna `DATA` de string para `datetime` com tratamento de possíveis inconformidades cronológicas.
 - **Sprint 3 (Limpeza de Nulos e Duplicatas):**
   - Mapeamento e quantificação de valores nulos.
-  - Eliminação justificada das 4 colunas excedentes (`Unnamed: 10` a `13`), decorrentes de delimitadores residuais no arquivo CSV (Critério 4).
-  - Tratamento condicional com `if/else` da coluna de categoria (`PR_CAT`), convertendo valores ausentes e `#N/D` para `"Sem Categoria"` (Critério 4).
+  - Eliminação justificada das 4 colunas excedentes (`Unnamed: 10` a `13`), decorrentes de delimitadores residuais no arquivo CSV.
+  - Tratamento condicional com `if/else` da coluna de categoria (`PR_CAT`), convertendo valores ausentes e `#N/D` para `"Sem Categoria"`.
   - Expurgo criterioso de **96.553 linhas duplicadas**, garantindo a integridade dos volumes.
 - **Sprint 4 (Estatística Descritiva da Coluna de Filhos `CL_FHL`):**
   - Cálculo de todas as métricas: Média, Mediana, Moda, Desvio Padrão, Mínimo, Máximo, Contagem, Quartis (Q1 25%, Q2 50%, Q3 75%) e Intervalo Interquartil (IQR).
@@ -121,7 +121,7 @@ O processo de **ETL (Extract, Transform, Load)** constitui o pilar fundamental d
 
 ---
 
-## 💡 Principais Insights e Conclusões (Critério Avaliativo 2)
+## 💡 Principais Insights e Conclusões
 
 A partir da exploração dos dados limpos, foram identificados os seguintes direcionamentos estratégicos para a operação de varejo:
 
