@@ -124,8 +124,6 @@ O processo de **ETL (Extract, Transform, Load)** constitui o pilar fundamental d
 
 ## 💼 Respostas às Perguntas de Negócio (Perguntas Operacionais)
 
-Em estrita conformidade com as diretrizes do mini-projeto de responder perguntas operacionais da rede varejista (*quem compra mais*, *quais categorias vendem mais*, *como variam as vendas ao longo do tempo*), consolidam-se abaixo as respostas quantificadas e embasadas nos dados higienizados:
-
 ### 1️⃣ Pergunta 1: Quem compra mais?
 * **Distribuição por Gênero (`CL_GENERO`):**
   - **Liderança Feminina:** As clientes do gênero feminino lideram o consumo, respondendo por **52,14%** de todo o volume de produtos comercializados (**382.438 itens**) e **51,70%** das compras realizadas (**9.549 transações** em 517 clientes cadastradas).
