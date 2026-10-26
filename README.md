@@ -106,7 +106,7 @@ O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
 
 ---
 
-## 🧠 Reflexão Teórica: ETL e Qualidade de Dados (Critério Avaliativo 1)
+## 🧠 Reflexão Teórica: ETL e Qualidade de Dados
 
 O processo de **ETL (Extract, Transform, Load)** constitui o pilar fundamental de qualquer iniciativa de Ciência de Dados, Engenharia de Dados e Business Intelligence. Na prática do mercado, dados transacionais dificilmente chegam prontos para consumo; frequentemente apresentam ruídos decorrentes de divergências de sistemas legados, falhas em formulários de cadastro e exportações incorretas.
 
