@@ -13,9 +13,10 @@
 1. [Visão Geral e Objetivos](#-visão-geral-e-objetivos)
 2. [Instruções de Execução](#-instruções-de-execução)
 3. [Estrutura do Projeto e Sprints](#-estrutura-do-projeto-e-sprints)
-4. [Reflexão Teórica: ETL e Qualidade de Dados](#-reflexão-teórica-etl-e-qualidade-de-dados-critério-avaliativo-1)
-5. [Principais Insights e Conclusões da Análise](#-principais-insights-e-conclusões-critério-avaliativo-2)
-6. [Resultados e Resumo dos Contadores](#-painel-final-de-contadores-do-pipeline)
+4. [Reflexão Teórica: ETL e Qualidade de Dados (Critério 1)](#-reflexão-teórica-etl-e-qualidade-de-dados-critério-avaliativo-1)
+5. [Respostas às Perguntas de Negócio (Perguntas Operacionais)](#-respostas-às-perguntas-de-negócio-perguntas-operacionais)
+6. [Principais Insights e Conclusões da Análise (Critério 2)](#-principais-insights-e-conclusões-critério-avaliativo-2)
+7. [Resultados e Resumo dos Contadores](#-painel-final-de-contadores-do-pipeline)
 
 ---
 
@@ -118,6 +119,61 @@ O processo de **ETL (Extract, Transform, Load)** constitui o pilar fundamental d
 5. **Interpretabilidade e Semântica Categórica (Interpretability):** A coluna `CL_EC` continha originalmente códigos numéricos brutos (`1` a `5`). Para viabilizar a tomada de decisão executiva na matriz analítica multidimensional, adotou-se a convenção clássica de cadastros demográficos e socioeconômicos brasileiros (IBGE / ERPs varejistas), mapeando `1: Solteiro`, `2: Casado`, `3: Divorciado`, `4: Viúvo` e `5: Outro` na coluna derivada `CL_EC_DESC`.
 
 *Conclusão teórica:* Investir na camada de preparação e governança da qualidade dos dados assegura que as decisões tomadas pela gestão estejam ancoradas em fatos consistentes, evitando o clássico axioma *"Garbage In, Garbage Out"* (GIGO).
+
+---
+
+## 💼 Respostas às Perguntas de Negócio (Perguntas Operacionais)
+
+Em estrita conformidade com as diretrizes do mini-projeto de responder perguntas operacionais da rede varejista (*quem compra mais*, *quais categorias vendem mais*, *como variam as vendas ao longo do tempo*), consolidam-se abaixo as respostas quantificadas e embasadas nos dados higienizados:
+
+### 1️⃣ Pergunta 1: Quem compra mais?
+* **Distribuição por Gênero (`CL_GENERO`):**
+  - **Liderança Feminina:** As clientes do gênero feminino lideram o consumo, respondendo por **52,14%** de todo o volume de produtos comercializados (**382.438 itens**) e **51,70%** das compras realizadas (**9.549 transações** em 517 clientes cadastradas).
+  - **Público Masculino:** É responsável por **47,86%** do volume (**351.009 itens** em **8.922 transações** de 483 clientes cadastrados).
+  - **Cesta Média:** A média de itens por transação é rigorosamente idêntica entre os gêneros (**39,6 itens/compra no masculino** vs. **40,0 itens/compra no feminino**). Isso comprova que a maior participação feminina decorre de uma **maior frequência e taxa de visitação** à loja.
+* **Distribuição por Segmento de Clientes (`CL_SEG`):**
+  - **Segmento B:** Concentra **63,88%** do volume total transacionado (**468.552 itens**).
+  - **Segmento C:** Representa a segunda maior fatia comercial, com **27,90%** (**204.604 itens**).
+  - **Segmento A (Premium):** Responde por apenas **8,22%** (**60.291 itens**).
+  - *Conclusão:* Mais de **91,7%** da demanda é impulsionada pelos clientes dos segmentos médios e populares (B e C).
+* **Perfil Familiar e Demográfico:**
+  - Clientes **sem filhos** constituem a expressiva maioria dos compradores (**52,5% da base de clientes**, com mediana = 0).
+  - Na análise bivariada de Segmento vs. Estado Civil (`CL_SEG` x `CL_EC_DESC`), **clientes casados e solteiros dos segmentos B e C** são os principais geradores de receita e volume na rede.
+
+---
+
+### 2️⃣ Pergunta 2: Quais categorias vendem mais?
+* **Ranking Geral de Volume e Participação por Categoria (`PR_CAT`):**
+
+| Posição | Categoria | Quantidade de Itens | Participação no Mix (%) | Compras Distintas (`CO_ID`) |
+| :---: | :--- | :---: | :---: | :--- |
+| 🥇 1º | **ALIMENTOS** | 386.816 | **52,74%** | 18.411 |
+| 🥈 2º | **HIGIENE** | 137.822 | **18,79%** | 16.518 |
+| 🥉 3º | **LIMPEZA** | 129.317 | **17,63%** | 16.208 |
+| 4º | **PET** | 39.141 | **5,34%** | 10.707 |
+| 5º | **ACESSÓRIOS / OUTROS** | 37.116 | **5,06%** | 10.427 |
+| - | **Sem Categoria (Imputados no ETL)** | 3.235 | **0,44%** | 2.502 |
+| **TOTAL** | - | **733.447** | **100,00%** | **18.471** |
+
+* **Diagnóstico Estratégico de Sortimento:**
+  - O negócio é marcadamente centrado em bens de primeira necessidade: as categorias **Alimentos, Higiene e Limpeza somam 89,16%** de todas as saídas de estoque.
+  - As categorias **Pet** (5,34%) e **Acessórios** (5,06%) possuem potencial estratégico para campanhas de venda casada (*cross-selling*) em pontos quentes do supermercado (gôndolas de checkout).
+
+---
+
+### 3️⃣ Pergunta 3: Como variam as vendas ao longo do tempo?
+* **Histórico Temporal do Volume Anual de Vendas:**
+
+| Ano | Volume Total de Itens | Compras Únicas Realizadas | Média de Itens por Compra | Diagnóstico Operacional |
+| :---: | :---: | :---: | :---: | :--- |
+| **2019** | 190.435 | 4.787 | 39,78 | Operação plena e estável |
+| **2020** | 192.176 | 4.821 | 39,86 | Leve crescimento (+0,91%), forte resiliência na demanda de itens básicos |
+| **2021** | 191.092 | 4.819 | 39,65 | Manutenção do padrão histórico médio |
+| **2022** | 159.744 | 4.044 | 39,50 | Período parcial: dados finalizados em **08/12/2022** |
+
+* **Diagnóstico da Tendência Cronológica:**
+  - O volume de vendas nos três anos com histórico completo (2019, 2020 e 2021) manteve-se excepcionalmente regular (~191.000 itens e ~4.800 transações anuais).
+  - A variação observada em 2022 é pontual e artificial, decorrendo exclusivamente do encerramento da coleta de dados em **08 de dezembro de 2022**. Projetando os dias remanescentes do mês com as compras de fim de ano, 2022 acompanha o mesmo patamar histórico anual.
 
 ---
 

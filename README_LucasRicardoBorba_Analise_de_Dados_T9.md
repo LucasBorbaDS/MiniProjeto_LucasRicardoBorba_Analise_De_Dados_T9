@@ -27,4 +27,4 @@
 ### 📦 Arquivos Gerados na Entrega
 - [`miniprojeto_analise.ipynb`](miniprojeto_analise.ipynb): Notebook Jupyter completo com código documentado, testes de hipóteses, tabelas e gráficos executados.
 - [`df_varejo_limpo.csv`](df_varejo_limpo.csv): Dataset tratado e deduplicado pronto para análise.
-- [`README.md`](README.md): Documentação completa contendo a reflexão teórica de ETL e Qualidade de Dados (Critério 1) e os 5 tópicos de insights estratégicos (Critério 2).
+- [`README.md`](README.md): Documentação completa contendo a reflexão teórica de ETL e Qualidade de Dados (Critério 1), respostas às perguntas operacionais de negócio e os tópicos de insights estratégicos (Critério 2).
