@@ -30,7 +30,7 @@ Este projeto implementa um pipeline completo, estruturado e reproduzível de **E
 
 O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **`uv`**.
 
-### Opção 1: Executando localmente no VS Code
+### Opção 1: Executando localmente via uv
 1. Clone o repositório:
    ```bash
    git clone https://github.com/LucasBorbaDS/MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9.git
