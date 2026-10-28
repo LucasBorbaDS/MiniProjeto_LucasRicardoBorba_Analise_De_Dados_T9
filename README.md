@@ -74,6 +74,46 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
 
 ## 🏗️ Estrutura do Projeto e Sprints
 
+### 📂 Estrutura de Diretórios e Versionamento de Arquivos
+
+O projeto segue um padrão rigoroso de segregação de responsabilidades arquiteturais, separando a camada de dados brutos e curados, o código analítico e as diretrizes de governança do ambiente:
+
+```text
+MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9/
+│
+├── Data/
+│   ├── Base_Varejo.csv               # Dataset bruto de entrada (830.000 registros originais)
+│   └── df_varejo_limpo.csv           # Dataset tratado, deduplicado e higienizado final (733.447 registros)
+│
+├── Notebook/
+│   └── miniprojeto_analise.ipynb     # Notebook Jupyter com o pipeline analítico completo das 6 Sprints
+│
+├── .gitignore                        # Políticas de exclusão do Git (.venv, __pycache__, uv.lock)
+├── .python-version                   # Fixação da versão do interpretador Python (3.14)
+├── pyproject.toml                    # Metadados e dependências do projeto gerenciados via uv
+├── requirements.txt                  # Dependências fixadas para compatibilidade e instalação via pip
+├── README.md                         # Documentação analítica completa, reflexão teórica e governança
+└── README_LucasRicardoBorba_Analise_de_Dados_T9.md # Guia rápido executivo de entrega
+```
+
+### 🏷️ Políticas de Versionamento e Governança de Dados (Sprint 6)
+
+1. **Camada de Dados (`Data/`):**
+   - **`Base_Varejo.csv` (Camada Raw/Bruta):** Preservada em seu formato original para assegurar a **reprodutibilidade estrita** do pipeline de ETL por qualquer avaliador ou analista.
+   - **`df_varejo_limpo.csv` (Camada Processada/Curada):** Exportada no fechamento do pipeline contendo 733.447 registros após expurgo de 96.553 duplicatas e tratamento de nulos/categorias, pronta para integração com Power BI, Tableau ou modelos preditivos.
+
+2. **Camada de Código Analítico (`Notebook/`):**
+   - **`miniprojeto_analise.ipynb`:** Isolado em diretório dedicado. Opera com caminhos relativos diretos (`../Data/Base_Varejo.csv` e `../Data/df_varejo_limpo.csv`), garantindo execução limpa e portabilidade sem acoplamento a caminhos absolutos do sistema operacional.
+
+3. **Governança de Exclusões no Controle de Versão (`.gitignore`):**
+   - **Ambientes virtuais:** `.venv/` e bibliotecas locais compiladas são ignoradas para evitar versionamento de binários dependentes de máquina.
+   - **Arquivos temporários e caches:** Diretórios `__pycache__/` e arquivos `*.pyc` são excluídos.
+   - **Lockfiles voláteis (`uv.lock`):** Desrastreado do repositório para evitar conflitos de hash de wheels entre diferentes sistemas operacionais, mantendo a instalação declarativa pura e universal via `pyproject.toml` e `requirements.txt`.
+
+---
+
+### 🏃 Sprints do Projeto no Notebook
+
 O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
 
 - **Sprint 1 (Importação e Diagnóstico):**
@@ -103,7 +143,9 @@ O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
   - Painel consolidado de contadores exibido em formato de relatório de terminal.
   - 5 conclusões e insights estratégicos do negócio.
 - **Sprint 6 (Versionamento e Exportação):**
-  - Geração do arquivo processado final [`Data/df_varejo_limpo.csv`](Data/df_varejo_limpo.csv) pronto para consumo.
+  - Segregação arquitetural das pastas (`Data/` e `Notebook/`).
+  - Geração e exportação do arquivo processado final [`Data/df_varejo_limpo.csv`](Data/df_varejo_limpo.csv) pronto para consumo.
+  - Estabelecimento das diretrizes de versionamento semântico no Git e governança de exclusões no `.gitignore`.
 
 ---
 

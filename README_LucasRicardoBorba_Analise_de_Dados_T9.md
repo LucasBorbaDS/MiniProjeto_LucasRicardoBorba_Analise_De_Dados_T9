@@ -24,8 +24,25 @@
 
 ---
 
-### 📦 Arquivos Gerados na Entrega
-- [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb): Notebook Jupyter completo com código documentado, testes de hipóteses, tabelas e gráficos executados.
-- [`Data/Base_Varejo.csv`](Data/Base_Varejo.csv): Dataset bruto transacional.
-- [`Data/df_varejo_limpo.csv`](Data/df_varejo_limpo.csv): Dataset tratado e deduplicado pronto para análise.
-- [`README.md`](README.md): Documentação completa contendo a reflexão teórica de ETL e Qualidade de Dados (Critério 1), respostas às perguntas operacionais de negócio e os tópicos de insights estratégicos (Critério 2).
+### 📦 Estrutura e Versionamento de Arquivos na Entrega
+
+```text
+MiniProjeto_LucasRicardoBorba_Analise_De_Dados_T9/
+├── Data/
+│   ├── Base_Varejo.csv               # Dataset bruto transacional original (830.000 linhas)
+│   └── df_varejo_limpo.csv           # Dataset higienizado e deduplicado final (733.447 linhas)
+├── Notebook/
+│   └── miniprojeto_analise.ipynb     # Pipeline analítico completo (Sprints 1 a 6)
+├── .gitignore                        # Políticas de exclusão do Git (.venv, __pycache__, uv.lock)
+├── .python-version                   # Fixação da versão do Python (3.14)
+├── pyproject.toml                    # Configurações do projeto e dependências (uv)
+├── requirements.txt                  # Dependências para instalação via pip
+├── README.md                         # Relatório técnico completo de ETL e respostas de negócio
+└── README_LucasRicardoBorba_Analise_de_Dados_T9.md # Guia rápido executivo de entrega
+```
+
+#### 🏷️ Detalhamento dos Componentes Entregues:
+- [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb): Notebook Jupyter completo com código documentado, testes de hipóteses, tabelas dinâmicas e gráficos executados.
+- [`Data/Base_Varejo.csv`](Data/Base_Varejo.csv): Dataset bruto transacional preservado para reproduzibilidade.
+- [`Data/df_varejo_limpo.csv`](Data/df_varejo_limpo.csv): Dataset final tratado, deduplicado e pronto para consumo analítico / BI.
+- [`README.md`](README.md): Documentação completa contendo a reflexão teórica de ETL e Qualidade de Dados (Critério 1), respostas quantificadas às perguntas de negócio e conclusões estratégicas (Critério 2).
