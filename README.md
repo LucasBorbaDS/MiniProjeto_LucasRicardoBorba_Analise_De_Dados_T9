@@ -4,8 +4,8 @@
 - **Disciplina:** Análise de Dados com Python
 - **Turma:** `Analise_de_Dados_T9`
 - **Aluno:** Lucas Ricardo Borba
-- **Dataset:** `Base Varejo.csv` (830.000 registros originais)
-- **Notebook Principal:** [`miniprojeto_analise.ipynb`](miniprojeto_analise.ipynb)
+- **Dataset:** `Data/Base_Varejo.csv` (830.000 registros originais)
+- **Notebook Principal:** [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb)
 
 ---
 
@@ -40,7 +40,7 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
    ```bash
    uv sync
    ```
-3. Abra o arquivo [`miniprojeto_analise.ipynb`](miniprojeto_analise.ipynb) no VS Code.
+3. Abra o arquivo [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb) no VS Code.
 4. Selecione o kernel do Python localizado em `.venv\Scripts\python.exe`.
 5. Clique em **"Run All" (Executar Todas as Células)**.
 
@@ -61,13 +61,13 @@ O projeto foi configurado com Python 3.14 utilizando o gerenciador de pacotes **
    ```bash
    pip install -r requirements.txt
    ```
-4. Abra o arquivo [`miniprojeto_analise.ipynb`](miniprojeto_analise.ipynb) no VS Code.
+4. Abra o arquivo [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb) no VS Code.
 5. Selecione o kernel do Python do ambiente virtual criado.
 6. Clique em **"Run All" (Executar Todas as Células)**.
 
 
 ### Opção 3: Executando via Google Colab
-1. Faça o upload do notebook [`miniprojeto_analise.ipynb`](miniprojeto_analise.ipynb) e do arquivo [`Base Varejo.csv`](Base%20Varejo.csv) na raiz do Colab.
+1. Faça o upload do notebook [`Notebook/miniprojeto_analise.ipynb`](Notebook/miniprojeto_analise.ipynb) e do arquivo [`Data/Base_Varejo.csv`](Data/Base_Varejo.csv) na pasta correspondente ou na raiz do Colab.
 2. No menu superior, clique em **Ambiente de Execução > Executar Tudo**.
 
 ---
@@ -103,7 +103,7 @@ O notebook está estruturado rigorosamente conforme os 6 sprints avaliativos:
   - Painel consolidado de contadores exibido em formato de relatório de terminal.
   - 5 conclusões e insights estratégicos do negócio.
 - **Sprint 6 (Versionamento e Exportação):**
-  - Geração do arquivo processado final [`df_varejo_limpo.csv`](df_varejo_limpo.csv) pronto para consumo.
+  - Geração do arquivo processado final [`Data/df_varejo_limpo.csv`](Data/df_varejo_limpo.csv) pronto para consumo.
 
 ---
 
